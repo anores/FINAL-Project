@@ -1,1 +1,8 @@
-# FINAL-Project
+Summary:
+What I will try to achieve with my final project is to create three interactive, humidity-reponive, and movement-responsive 3D printed planters that will have real plants inside.  The idea is for the planters to show visual feedback of how much humidity a plant's soil has through three different LED light colors, lighting the planters at the end.  Green will represent the plant's soil is humid, and dosn't need water.  Yellow will represent the plant's humidity levels are fine for now, but it's almost time to water it.  Red will represent the plant's humidity levels are low and needs to be watered ASAP.  The planters will also be reponsive to the movement around them; the lights will only turn on if there is movement, and turn off if there is nobody around (subject change by building upon the idea through further research).
+
+Component Parts: I will need plastic to 3D print the planters (plastic will be bought, planters will be made).  Three different colors of LED strip lights, green, yellow, and red (bought). Three small plants (bought).  As wel as an Arduino kit.
+
+Challenges:  I consider the hardest chanllenges might be 1. succesfully 3D printing 3 different planters from scratch, as I've never touched a 3D printer before.  2.  Buidling the code that will succesfully detect the soil's humidity, and being able to determine what is considered too little moisture and what is considered just enough.  3. Make the planters light up depending on movement, again because I've never worked with anything like it.
+
+Project Timeline: I hope to be fully informed on how to use and operate a 3D printer, along with starting to research my code by  week 1.  Have the planters ready by week 2, and start to play around with my code that changes light colors, and detects movement to turn on/off lights between week 2-3.  Have everyhing mostly fleshed by week 4, adding the final touches.  Have everyhing (hopefully) completed by week 5.  
