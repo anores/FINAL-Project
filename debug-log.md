@@ -9,7 +9,6 @@ Every time you run in to unexpected behavior in your project (a bug, a component
 
 LOG: 
 
--Come up with idea for project - 3D printed planters that detect moisture level & give feedback through 3 different LED light 
-colors.  Colors are intractive through motion detection.
+-Come up with idea for project - 3D printed planters that detect moisture level & give feedback through 3 different LED light colors.  Colors are intractive through motion detection.
 -go to hybrid lab to talk about my idea, and what components/software I might need.
 -order 1m LED color strip.
