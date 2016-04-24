@@ -1,0 +1,16 @@
+1. What you've done so far.
+So far I have built the code to determine when the moisture detector will give feedback through three different LED colors
+depending on the amount of moisture on the soil.  I have 3D printed one of the planters, but just for testing.
+
+2. What remains to be done.
+I have yet to test out the code on actual soil with two plants, one that's drying and one that has sufficient water, which
+I plan on getting tomorrow (Sunday).  I need to start building the code for motion detection to trigger the LED on
+the planter to light up when someone approaches.  I also need to print the actuall planter and integrate both sensors to 
+with it.
+
+3. A schedule for completing the work.
+Sunday, Monday - Get plants, work on code for motion detector, get feedback from you.
+Tuesday - Meet with coach for feedback on code, test code on plants/soil. 
+Wednesday - Get feedback from you, meet with coach for feedback on code, test code on plants/soil, 
+Wednesday-Saturday - 3D planter, integrate sesnors with it.
+Saturday-Sunday - Work on final presentation.
