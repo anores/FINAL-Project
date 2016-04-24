@@ -12,3 +12,21 @@ LOG:
 -Come up with idea for project - 3D printed planters that detect moisture level & give feedback through 3 different LED light colors.  Colors are intractive through motion detection.
 -go to hybrid lab to talk about my idea, and what components/software I might need.
 -order 1m LED color strip.
+-research/come up with:
+-if(analogRead(5)<350){
+-if(analogRead(5)>350&&analogRead(5)<700){
+-if(analogRead(5)>700){
+-print "I am thirsty please give me water" on <350 for my reference 
+-print "I feel so comfortable" for my reference" on >350 & <700
+-print "Too much water, I might get hurt" >700 for my reference
+-// This is for Trinket 5V 16MHz, you can remove these three lines if you are not using a Trinket
+  #if defined (__AVR_ATtiny85__)
+    if (F_CPU == 16000000) clock_prescale_set(clock_div_1);
+  #endif
+  // End of trinket special code
+-strip.show(); // Initialize all pixels to 'off'
+-strip.setPixelColor(i, 255, 0, 0);   //turn every third pixel off /RGB // LED COLOR = red
+-strip.show(); //Tells it to run
+-strip.setPixelColor(i, 0, 255, 0);  // LED COLOR = green
+-strip.setPixelColor(i, 255, 255, 0); LED COLOR = yellow
+  
