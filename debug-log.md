@@ -29,4 +29,10 @@ LOG:
 -strip.show(); //Tells it to run
 -strip.setPixelColor(i, 0, 255, 0);  // LED COLOR = green
 -strip.setPixelColor(i, 255, 255, 0); LED COLOR = yellow
-  
+4/25/16 -had error message: arduino board at /dev/cu.usbmodem 14 is not available
+-switched ports-worked
+-LEDs would not change to green even though it's in relatively moist soil
+-lowered I feel comfortable analog read to 200-not working 
+-lowered I feel comfortable analog read to 170-not working 
+-lowered I feel comfortable analog read to 150-not working
+-lowered I feel comfortable analog read to 170-not working
