@@ -36,3 +36,10 @@ LOG:
 -lowered I feel comfortable analog read to 170-not working 
 -lowered I feel comfortable analog read to 150-not working
 -lowered I feel comfortable analog read to 170-not working
+-put I feel comfortable analog  up to >300 and <500.  Came up with conclusion that rather than the values of the 3 different levels not being right, the ambient moisture levels were a varible that were messing with the readin of the moisture, and the feedback of the LEDs
+-4/27/16 - decided to change the motion sesnor for a distance sensor.  This makes the LEDs interactive only if someone is <20 inches away from the sesnor, rather than staying on the whole time if there is movement in the room
+-5/2/16 - The lights turn on and off correcly based on the desiatnce I'm from the planter (<20 inches). 
+-however, the further I step away from those 20 inches, the lights start blinking rather than staying off like its suppposed to.
+-Sometimes this would happen, sometimes it would function correctly
+-changed delay from 100, 90,80,70,60,50,40,30 to 20 to see if this would be resolved - didn't work
+-came up with conclusion that the sesnor might not be strong enough to capture longer distances than 20in. therefore the signal gets disrupted, translating into the unwanting behavior of blinking.
