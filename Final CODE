@@ -1,0 +1,109 @@
+const int pingPin = 7;
+
+
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+#include <avr/power.h>
+#endif
+
+#define PIN 6
+
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
+
+
+void setup() {
+  // This is for Trinket 5V 16MHz, you can remove these three lines if you are not using a Trinket
+#if defined (__AVR_ATtiny85__)
+  if (F_CPU == 16000000) clock_prescale_set(clock_div_1);
+#endif
+  // End of trinket special code
+
+
+  strip.begin();
+  strip.show(); // Initialize all pixels to 'off'
+  Serial.begin(9600);
+}
+
+
+long microsecondsToInches(long microseconds)
+{
+  // According to Parallax's datasheet for the PING))), there are
+  // 73.746 microseconds per inch (i.e. sound travels at 1130 feet per
+  // second).  This gives the distance travelled by the ping, outbound
+  // and return, so we divide by 2 to get the distance of the obstacle.
+  // See: http://www.parallax.com/dl/docs/prod/acc/28015-PING-v1.3.pdf
+  return microseconds / 74 / 2;
+}
+
+long microsecondsToCentimeters(long microseconds)
+{
+  // The speed of sound is 340 m/s or 29 microseconds per centimeter.
+  // The ping travels out and back, so to find the distance of the
+  // object we take half of the distance travelled.
+  return microseconds / 29 / 2;
+}
+
+void loop() {
+
+  // establish variables for duration of the ping,
+  // and the distance result in inches and centimeters:
+  long duration, inches, cm;
+
+  // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
+  // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+  pinMode(pingPin, OUTPUT);
+  digitalWrite(pingPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pingPin, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(pingPin, LOW);
+
+
+  pinMode(pingPin, INPUT);
+  duration = pulseIn(pingPin, HIGH);
+
+  // convert the time into a distance
+  inches = microsecondsToInches(duration);
+
+  Serial.print(inches);
+  Serial.print("in, ");
+
+  Serial.println();
+
+  delay(30);  //changed from 100, 70 60, 50, 35, to 20
+
+  if (inches < 20) {
+
+
+    if (analogRead(5) < 299) {
+      Serial.println("I am thirsty please give me water");
+      for (int i = 0; i < strip.numPixels(); i++) {
+        strip.setPixelColor(i, 255, 0, 0);        //turn every third pixel off /RGB  //red
+      }
+      strip.show(); //Tells it to run
+
+    }
+    if (analogRead(5) > 300 && analogRead(5) < 500) {
+      Serial.println("I feel so comfortable");
+      for (int i = 0; i < strip.numPixels(); i++) {
+        strip.setPixelColor(i, 0, 255, 0);        //turn every third pixel off /RGB  //green
+      }
+      strip.show(); //Tells it to run
+    }
+    if (analogRead(5) > 501) {
+      Serial.println("Too much water, I might get hurt");
+      for (int i = 0; i < strip.numPixels(); i++) {
+        strip.setPixelColor(i, 255, 255, 0);        //turn every third pixel off /RGB  //yellow
+      }
+      strip.show(); //Tells it to run
+    }
+    delay(200);
+  } else {
+    for (int i = 0; i < strip.numPixels(); i++) {
+      strip.setPixelColor(i, 0, 0, 0);
+
+    }
+    strip.show();
+
+  }
+}
